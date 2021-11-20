@@ -1,0 +1,6 @@
+print("enter first number\n")
+num1=input()
+print("enter second number")
+num2=input()
+print("Addition of num1 and num2 is",int(num1)+int(num2))
+print("Substraction of two number is",int(num1)-int(num2))
