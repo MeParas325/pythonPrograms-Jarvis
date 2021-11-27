@@ -9,12 +9,13 @@ import smtplib
 import requests
 import json
 i = 1
-dict = {"Tanuja":"juyaltanvi@gmail.com",
-        "Manas":"mamashverma@gmail.com"}
+dict = {"Tanuja":"juyaltanuja.01@gmail.com",
+        "Manas":"mamashverma@gmail.com",
+        "Mamta":"sharmamta765@gmail.com"}
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
 # print(voices[].id)
-engine.setProperty('voice', voices[2].id)
+engine.setProperty('voice', voices[0].id)
 
 def wishMe():
     hour = int(datetime.datetime.now().hour)
@@ -156,50 +157,66 @@ if __name__ == "__main__":
             j = 0
             c = 1
             while c <= 10:
-                speak("Enter the option form Snake, Water and Gun")
-                a = input("enter the option-Snake,Gun,Water\n")
+                speak("Just say your choice from Snake, Water and Gun")
+                query = takeCommand().lower()
 
                 lst = ["Snake", "Water", "Gun"]
                 choice = random.choice(lst)
                 print(choice)
-                if a == "Snake" and choice == "Snake":
+                if query == "snake" and choice == "Snake":
+                    speak(f"Your choose {query}")
+                    speak("Computer also choose snake")
                     print("try again")
                     speak("Try again")
-                elif a == "Snake" and choice == "Gun":
+                elif query == "snake" and choice == "Gun":
+                    speak(f"Your choose {query}")
+                    speak("Computer choose Gun")
                     print("Computer won")
                     speak("Computer won")
                     i = i + 1
-                elif a == "Snake" and choice == "Water":
+                elif query == "snake" and choice == "Water":
+                    speak(f"Your choose {query}")
+                    speak("Computer choose water")
                     print("Paras won")
                     speak("Paras won")
                     j = j + 1
-                elif a == "Water" and choice == "Snake":
+                elif query == "water" and choice == "Snake":
+                    speak(f"Your choose {query}")
+                    speak("Computer choose snake")
                     print("Computer won")
                     speak("Computer won")
                     i = i + 1
-                elif a == "Water" and choice == "Gun":
+                elif query == "water" and choice == "Gun":
+                    speak(f"Your choose {query}")
+                    speak("Computer choose gun")
                     print("Paras won")
                     speak("Paras won")
                     j = j + 1
-                elif a == "Water" and choice == "Water":
+                elif query == "water" and choice == "Water":
+                    speak(f"Your choose {query}")
+                    speak("Computer choose water")
                     print("Try again")
                     speak("Try again")
-                elif a == "Gun" and choice == "Snake":
+                elif query == "gun" and choice == "Snake":
+                    speak(f"Your choose {query}")
+                    speak("Computer choose snake")
                     print("Paras won")
                     speak("Paras won")
                     j = j + 1
-                elif a == "Gun" and choice == "Gun":
+                elif query == "gun" and choice == "Gun":
+                    speak(f"Your choose {query}")
+                    speak("Computer choose gun")
                     print("Try again")
                     speak("Try again")
-                elif a == "Gun" and choice == "Water":
+                elif query == "gun" and choice == "Water":
+                    speak(f"Your choose {query}")
+                    speak("Computer choose water")
                     print("Computer won")
                     speak("Computer won")
                     i = i + 1
                 else:
-                    print("Please input the values only Snake,Water,Gun")
-                    print("The first letter of Snake, Water and Gun should be Capital and the rest must be small")
-                    speak("Please input the values only Snake,Water,Gun")
-                    speak("The first letter of Snake, Water and Gun should be Capital and the rest must be small")
+                    print("Please tell me the values only snake,water,gun")
+                    speak("Please tell me the values only snake,water,gun")
                 c = c + 1
 
             if j < i:
@@ -208,5 +225,12 @@ if __name__ == "__main__":
             if i < j:
                 print("Paras won with", j, "points")
                 speak(f"Paras won with {j} points")
+
+        elif "kenzie" in query:
+            speak("Hey kenzie, always be happy god is always with you and can share any of your problem with my Sir")
+
+        
+
+
 
 
